@@ -8,6 +8,7 @@ const mongoose = require('mongoose');
 
 //import
 const userRouter = require("./server/routes/user");
+const staticRouter = require("./server/routes/staticRoute")
 
 
 
@@ -25,16 +26,7 @@ app.use(express.static('client/views'));
 
 
 // Routes (API routes and serving HTML pages)
-app.get('/', (req, res) => res.sendFile(__dirname + '/client/public/index.html'));
-app.get('/login', (req, res) => res.render('login')); // Render the login.ejs template
-
-// Socket.io connection
-io.on('connection', socket => {
-    console.log('User connected');
-    socket.on('chat message', msg => {
-        io.emit('chat message', msg);
-    });
-});
+app.use('/', staticRouter);
 
 app.listen(3000, () => {
     console.log('Server listening on port 3000');
