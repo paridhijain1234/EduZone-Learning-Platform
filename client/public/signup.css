@@ -1,4 +1,4 @@
- /* General Styles */
+/* General Styles */
 * {
     margin: 0;
     padding: 0;
@@ -12,11 +12,31 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
     flex-direction: column;
+    height: 100vh;
 }
 
-.login-container {
+header {
+    background-color: #ffb6c1;
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 2.5em;
+    color: white;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px #ff6f61;
+}
+
+header p {
+    font-size: 1.2em;
+    color: white;
+}
+
+.signup-container {
     width: 100%;
     height: 100%;
     display: flex;
@@ -28,7 +48,7 @@ body {
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
 }
 
-.login-box {
+.signup-box {
     background-color: #fff;
     border-radius: 20px;
     padding: 30px;
@@ -38,23 +58,18 @@ body {
     max-width: 400px;
 }
 
-.login-box h1 {
-    font-size: 2.5em;
-    color: #ff6f61;
-    margin-bottom: 10px;
+.signup-box form {
+    display: flex;
+    flex-direction: column;
 }
 
-.login-box p {
-    font-size: 1.2em;
-    margin-bottom: 20px;
-}
-
-.login-box label {
+.signup-box label {
     font-size: 1.1em;
     color: #333;
+    margin-bottom: 5px;
 }
 
-input[type="text"], input[type="password"] {
+input[type="text"], input[type="email"], input[type="password"] {
     width: 100%;
     padding: 12px;
     margin: 10px 0;
@@ -92,24 +107,6 @@ button:hover {
     margin-top: 10px;
 }
 
-/* Styling for the Sign-Up Link */
-.signup-link {
-    margin-top: 20px;
-    font-size: 1em;
-    color: #333;
-}
-
-.signup-link a {
-    color: #ff6f61;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s ease;
-}
-
-.signup-link a:hover {
-    color: #ff4500;
-}
-
 /* Footer */
 footer {
     position: fixed;
@@ -125,12 +122,16 @@ footer {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .login-box {
+    header h1 {
+        font-size: 2em;
+    }
+
+    .signup-box {
         padding: 20px;
         width: 90%;
     }
 
-    input[type="text"], input[type="password"] {
+    input[type="text"], input[type="email"], input[type="password"] {
         font-size: 1em;
     }
 
@@ -140,11 +141,15 @@ footer {
 }
 
 @media (max-width: 480px) {
-    .login-box {
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    .signup-box {
         padding: 15px;
     }
 
-    input[type="text"], input[type="password"] {
+    input[type="text"], input[type="email"], input[type="password"] {
         font-size: 0.9em;
     }
 
