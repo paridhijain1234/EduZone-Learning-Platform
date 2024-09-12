@@ -4,7 +4,6 @@ const userSchema = mongoose.Schema({
     full_name:{
         type : String,
         required : true,
-        unique : true
     },
     email:{
         type : String,
@@ -18,6 +17,6 @@ const userSchema = mongoose.Schema({
     }
 });
 
-const User = mongoose.model("user-data",userSchema)
+const User = mongoose.model("userData",userSchema)
 
 module.exports = User;
